@@ -207,21 +207,23 @@ For Claude Desktop (`claude_desktop_config.json`):
 ### Programmatic Usage
 
 ```typescript
-import { parseLog, detectIssues, getSummary } from './dist/index.js';
+import { parseLog, analyzeLog, generateSummary } from './dist/index.js';
 
 // Parse a log file
-const result = await parseLog(logContent);
-console.log(`Parsed ${result.events.length} events`);
+const result = parseLog(logContent);
+if (result.success) {
+  console.log(`Parsed ${result.data.events.length} events`);
 
-// Detect issues
-const issues = detectIssues(result);
-issues.forEach(issue => {
-  console.log(`[${issue.severity}] ${issue.title}`);
-});
+  // Analyze for issues
+  const analysis = analyzeLog(result.data);
+  analysis.issues.forEach(issue => {
+    console.log(`[${issue.severity}] ${issue.title}`);
+  });
 
-// Get AI-optimized summary
-const summary = getSummary(result);
-console.log(summary.text);
+  // Get AI-optimized summary (<500 tokens)
+  const summary = generateSummary(result.data, analysis);
+  console.log(`Health: ${summary.health}/100`);
+}
 ```
 
 ## Salesforce Authentication

@@ -20,7 +20,7 @@ const program = new Command();
 program
   .name('sf-debug')
   .description('AI-First Salesforce Debug Log Analyzer - Parse, analyze, and query debug logs')
-  .version('0.7.0');
+  .version('0.8.0');
 
 // ============================================================================
 // Register Commands

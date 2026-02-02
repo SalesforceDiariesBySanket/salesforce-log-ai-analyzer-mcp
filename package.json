@@ -26,7 +26,7 @@
     "test:detectors": "vitest src/analyzer/detectors",
     "test:managed": "vitest src/managed",
     "test:output": "vitest src/output",
-    "test:levels": "vitest src/analyzer/level",
+    "test:levels": "vitest src/analyzer/level-*",
     "test:privacy": "vitest src/privacy",
     "test:async": "vitest src/async",
     "test:mcp": "vitest src/mcp",

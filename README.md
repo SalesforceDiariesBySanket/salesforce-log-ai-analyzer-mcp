@@ -141,28 +141,64 @@ sf-debug-mcp --help
 
 ### As MCP Server (AI Assistants)
 
-Add to your VS Code MCP settings (`%APPDATA%\Code\User\mcp.json` on Windows, `~/Library/Application Support/Code/User/mcp.json` on macOS):
+Add to your VS Code MCP settings:
+- **Windows**: `%APPDATA%\Code\User\mcp.json`
+- **macOS**: `~/Library/Application Support/Code/User/mcp.json`
+- **Linux**: `~/.config/Code/User/mcp.json`
 
+**Windows Example:**
 ```json
 {
   "servers": {
     "sf-debug-analyzer": {
       "type": "stdio",
       "command": "node",
-      "args": ["/path/to/sf-debug-analyzer/dist/mcp/index.js"]
+      "args": ["C:\\Users\\YourUsername\\path\\to\\salesforce-log-ai-analyzer-mcp\\dist\\mcp\\index.js"]
     }
   }
 }
 ```
 
+**macOS/Linux Example:**
+```json
+{
+  "servers": {
+    "sf-debug-analyzer": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["/absolute/path/to/salesforce-log-ai-analyzer-mcp/dist/mcp/index.js"]
+    }
+  }
+}
+```
+
+**Important Notes:**
+- Use **absolute paths** (not relative paths like `./dist/mcp/index.js`)
+- On Windows, use double backslashes (`\\`) or forward slashes (`/`)
+- Run `npm run build` first to create the `dist` folder
+- Restart VS Code or reload the MCP connection after changes
+
 For Claude Desktop (`claude_desktop_config.json`):
 
+**Windows:**
 ```json
 {
   "mcpServers": {
     "sf-debug": {
       "command": "node",
-      "args": ["/path/to/sf-debug-analyzer/dist/mcp/index.js"]
+      "args": ["C:\\Users\\YourUsername\\path\\to\\salesforce-log-ai-analyzer-mcp\\dist\\mcp\\index.js"]
+    }
+  }
+}
+```
+
+**macOS/Linux:**
+```json
+{
+  "mcpServers": {
+    "sf-debug": {
+      "command": "node",
+      "args": ["/absolute/path/to/salesforce-log-ai-analyzer-mcp/dist/mcp/index.js"]
     }
   }
 }
@@ -347,7 +383,8 @@ This project draws inspiration from several excellent Salesforce debugging tools
 | `better-sqlite3` build fails | Ensure you have build tools installed: `npm install -g windows-build-tools` (Windows) or `xcode-select --install` (macOS) |
 | Auth fails in remote environment | Use Device Code flow or SFDX import instead of PKCE |
 | Logs not captured | Verify trace flags are set on correct user (including "Automated Process" for async jobs) |
-| MCP server not connecting | Check the path in your MCP config points to `dist/mcp/index.js` |
+| MCP server not connecting | 1. Verify `dist` folder exists (run `npm run build`)<br>2. Use absolute paths in mcp.json, not relative paths<br>3. On Windows, use double backslashes: `C:\\Users\\...\\dist\\mcp\\index.js`<br>4. Restart VS Code after config changes |
+| Module not found error | Check that the path in mcp.json matches your actual project location and includes `\\dist\\mcp\\index.js` at the end |
 
 ### Async Job Logging Note
 

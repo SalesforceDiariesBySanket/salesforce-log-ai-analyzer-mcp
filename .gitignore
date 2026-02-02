@@ -43,6 +43,12 @@ test-results.json
 # User-provided test logs (may contain sensitive data)
 __fixtures__/logs/user_provided/
 
+# Internal documentation (not for public repo)
+Architecture/
+Project Management and Tracking/
+src/PROJECT_STATE.md
+**/STATE.md
+
 # Test files (development only)
 test-*.ts
 test-*.js

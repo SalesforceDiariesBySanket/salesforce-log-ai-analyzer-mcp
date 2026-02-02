@@ -1,0 +1,44 @@
+# Source files (dist/ is published instead)
+src/
+tsconfig.json
+vitest.config.ts
+.eslintrc.js
+.prettierrc
+.prettierignore
+
+# Test files and fixtures
+__fixtures__/
+*.test.ts
+*.test.js
+test-*.ts
+test-*.js
+test-results.json
+temp_output.json
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project management (internal docs)
+Project Management and Tracking/
+Architecture/
+
+# Database and cache
+*.db
+.sf-debug-memory.db
+.cache/
+.eslintcache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Git
+.git/
+.gitignore

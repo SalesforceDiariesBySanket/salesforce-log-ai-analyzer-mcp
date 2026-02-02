@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.eslintcache
+
+# Temp files
+*.tmp
+*.temp
+temp_output.json
+test-results.json
+
+# Database files (user-specific)
+*.db
+.sf-debug-memory.db
+
+# User-provided test logs (may contain sensitive data)
+__fixtures__/logs/user_provided/
+
+# Test files (development only)
+test-*.ts
+test-*.js
+!vitest.config.ts

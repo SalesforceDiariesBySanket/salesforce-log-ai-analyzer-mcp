@@ -53,3 +53,13 @@ src/PROJECT_STATE.md
 test-*.ts
 test-*.js
 !vitest.config.ts
+
+# Editor and IDE
+*.sublime-workspace
+*.sublime-project
+
+# Package manager locks (optional - uncomment if you want to track)
+# package-lock.json
+
+# Build artifacts
+*.tsbuildinfo

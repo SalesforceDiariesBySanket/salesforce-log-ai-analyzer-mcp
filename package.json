@@ -1,9 +1,17 @@
 {
-  "name": "sf-debug-analyzer",
+  "name": "salesforce-log-ai-analyzer-mcp",
   "version": "0.8.0",
   "description": "AI-First Salesforce Debug Log Analyzer - Local-first, AI-optimized debug log analysis for Salesforce via MCP",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalesforceDiariesBySanket/salesforce-log-ai-analyzer-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SalesforceDiariesBySanket/salesforce-log-ai-analyzer-mcp/issues"
+  },
+  "homepage": "https://github.com/SalesforceDiariesBySanket/salesforce-log-ai-analyzer-mcp#readme",
   "bin": {
     "sf-debug": "./dist/cli/index.js",
     "sf-debug-mcp": "./dist/mcp/index.js"
@@ -38,9 +46,13 @@
     "ai",
     "apex",
     "soql",
-    "model-context-protocol"
+    "model-context-protocol",
+    "debugging",
+    "log-parser",
+    "github-copilot",
+    "claude"
   ],
-  "author": "",
+  "author": "SalesforceDiariesBySanket",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
